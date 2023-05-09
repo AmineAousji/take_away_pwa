@@ -1,0 +1,11 @@
+<form>
+  <div class="input">
+      <label>Username</label>
+      <input required type="text" name="login" #login>
+  </div>
+  <div class="input">
+      <label>Password</label>
+      <input required type="password" name="password" #password >
+  </div>
+  <button type="button" class="btn" (click)="LoginUser(login.value, password.value)">Login</button>
+</form>

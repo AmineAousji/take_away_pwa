@@ -1,0 +1,7 @@
+{
+  "name": "TakeAwayApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
