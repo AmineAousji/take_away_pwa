@@ -1,3 +1,17 @@
-<p>
-  newcategory works!
-</p>
+<div class="container">
+  <h2>Créer une catégorie:</h2>
+  <form>
+    <div class="input">
+      <label>Nom catégorie:</label>
+      <input [(ngModel)]="category.category_name" type="text" name="category_name" required>
+    </div>
+    <div class="input">
+      <label>Description:</label>
+      <textarea [(ngModel)]="category.description" name="description" required></textarea>
+      
+    </div>
+    <div class="button-container">
+      <button type="button" class="btn" (click)="addCategory()">Ajouter catégorie</button>
+    </div>
+  </form>
+</div>  

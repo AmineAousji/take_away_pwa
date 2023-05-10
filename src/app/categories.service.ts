@@ -31,4 +31,12 @@ export class CategoryService {
     return this.http.get(this.baseUrl + 'categories/' + categoryName + '/coursiers');
   }
 
+  addCategory(category: any): Observable <any>{
+    const headers = new HttpHeaders({
+      'Content-Type' : 'application/json',
+      'Authorization' : `Bearer ${localStorage.getItem('token')}`
+    })
+    return this.http.post(this.baseUrl + 'categories/', category, {headers:headers});
+  }
+
 }

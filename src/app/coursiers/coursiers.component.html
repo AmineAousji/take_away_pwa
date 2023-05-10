@@ -1,0 +1,57 @@
+<ion-content>
+  <div class="container">
+    <h1>Coursiers</h1>
+    <table align="center">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">recruitment date</th>
+            <th scope="col">Telephone number</th>
+            <th scope="col">Category</th>
+            <th scope="col">Modify</th>
+            <th scope="col">Delete</th>
+    
+        </tr>
+        <tr *ngFor="let coursier of coursiers" >
+            <td >{{coursier.name}}</td>
+            <td >{{coursier.adress}}</td>
+            <td >{{coursier.recruitment_date}}</td>
+            <td >{{coursier.Num_tel}}</td>
+            <td >{{coursier.category_name}}</td>
+            <td ><button (click)="getCoursier(coursier); delOrMod = true">Modifier</button></td>
+            <td ><button (click)="getCoursier(coursier); delOrMod = false ">Delete</button></td>
+        </tr>
+    </table>
+    
+    <div class ="div-h2" *ngIf="modifyCoursierForm">
+        <h2>Informations d'un coursier :</h2>
+    </div>
+    
+    <div *ngIf="modifyCoursierForm">
+    
+      <form (ngSubmit)="getCoursier(selectedCoursier)">
+          <label>Nom :</label>
+          <input [(ngModel)]="selectedCoursier.name" name="nom" required>
+    
+          <label>Adresse :</label>
+          <input [(ngModel)]="selectedCoursier.adress" name="adresse" required>
+    
+          <label>Date de recrutement :</label>
+          <input [(ngModel)]="selectedCoursier.recruitment_date" name="recruitment_date" required>
+    
+          <label>Numéro de téléphone :</label>
+          <input [(ngModel)]="selectedCoursier.Num_tel" name="Num_tel" required>
+    
+          <label>Catégorie :</label>
+          <select [(ngModel)]="selectedCoursier.category_name" name="category_name">
+              <option *ngFor="let category of categories" [value]="category.category_name">{{category.category_name}}</option>
+          </select>
+          <button class="button-mod_or_del"
+          (click)="delOrMod ? updateCoursier(selectedCoursier) : deleteCoursier(selectedCoursier)">{{delOrMod ? 'Modifier' : 'Supprimer'}} un coursier
+        </button>
+      </form>
+    
+    </div>
+  
+  </div>
+</ion-content>

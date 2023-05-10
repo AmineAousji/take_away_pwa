@@ -1,3 +1,20 @@
-<p>
-  dashboard works!
-</p>
+
+<h1>Categories</h1>
+
+<table align="center">
+    <tr>
+        <th scope="col">Categories</th>
+        <th scope="col">Coursiers</th>
+
+    </tr>
+    <tr *ngFor="let category of categories" >
+        <th scope="row" (click)="viewCategory(category)">{{category.category_name}}</th>
+        <td (click)="viewCoursierBycategory(category)">Coursiers</td>
+    </tr>
+</table>
+<div class="buttons-container">
+    <button role="button" (click)="newCoursier()">Ajouter un Coursier</button>
+    <button role="button" (click)="newCategory()">Ajouter une Catégorie</button>
+    <button role="button" (click)="newOrder()">Ajouter une Commande</button>
+    <button role="button" (click)="newUser()">Ajouter un Utilisateur</button>
+</div>
