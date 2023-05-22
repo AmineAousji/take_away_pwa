@@ -1,0 +1,68 @@
+<ion-content>
+  <h1>Orders</h1>
+
+<table align="center">
+    <tr>
+        <th scope="col">Customer</th>
+        <th scope="col">Restaurant</th>
+        <th scope="col">Customer Address</th>
+        <th scope="col">Restaurant Address</th>
+        <th scope="col">Price</th>
+        <th scope="col">Distance</th>
+        <th scope="col">Coursier ID</th>
+        <th scope="col">Modify</th>
+        <th scope="col">Delete</th>
+
+    </tr>
+    <tr *ngFor="let order of orders" >
+        <td >{{order.name_customer}}</td>
+        <td >{{order.name_restaurant}}</td>
+        <td >{{order.adress_customer}}</td>
+        <td >{{order.adress_restaurant}}</td>
+        <td >{{order.price}}</td>
+        <td >{{order.distance}}</td>
+        <td >{{order.coursier_id}}</td>
+        <td ><button (click)="getOrder(order); delOrMod = true">Modifier</button></td>
+        <td ><button (click)="getOrder(order); delOrMod = false">Delete</button></td>
+    </tr>
+</table>
+
+<div class ="div-h2-order" *ngIf="modifyOrderForm">
+    <h2>Informations d'une commande :</h2>
+</div>
+
+<div class ="div-order" *ngIf="modifyOrderForm">
+
+    <form (ngSubmit)="getOrder(selectedOrder)">
+        <label>Customer name :</label>
+        <input [(ngModel)]="selectedOrder.name_customer" name="name_customer" required>
+
+        <label>Restaurant name :</label>
+        <input [(ngModel)]="selectedOrder.name_restaurant" name="name_restaurant" required>
+        
+        <label>Customer address :</label>
+        <input [(ngModel)]="selectedOrder.adress_customer" name="adress_customer" required>
+        
+        <label>Restaurant address :</label>
+        <input [(ngModel)]="selectedOrder.adress_restaurant" name="adress_restaurant" required>
+
+        <label>Price :</label>
+        <input [(ngModel)]="selectedOrder.price" name="price" required>
+
+        <label>Distance :</label>
+        <input [(ngModel)]="selectedOrder.distance" name="distance" required>
+
+        <label>Coursier :</label>
+        <select [(ngModel)]="selectedOrder.coursier_id" name="coursier_id">
+            <option *ngFor="let coursier of coursiers" [value]="coursier.coursier_id">{{coursier.coursier_id }}</option>
+        </select>
+
+        <button class="button-mod_or_del"
+        (click)="delOrMod ? updateOrder(selectedOrder) : deleteOrder(selectedOrder)">{{delOrMod ? 'Modifier' : 'Supprimer'}} une Commande
+        </button>
+    </form>
+  
+  </div>
+  
+
+</ion-content>

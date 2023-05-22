@@ -1,0 +1,29 @@
+
+  <h2>Ajouter une commande :</h2>
+
+  <form (ngSubmit)="addOrder()">
+    <label>Customer name :</label>
+    <input [(ngModel)]="order.name_customer" name="name_customer" required>
+
+    <label>Restaurant name :</label>
+    <input [(ngModel)]="order.name_restaurant" name="name_restaurant" required>
+    
+    <label>Customer address :</label>
+    <input [(ngModel)]="order.adress_customer" name="adress_customer" required>
+    
+    <label>Restaurant address :</label>
+    <input [(ngModel)]="order.adress_restaurant" name="adress_restaurant" required>
+
+    <label>Price :</label>
+    <input [(ngModel)]="order.price" name="price" required>
+
+    <label>Distance :</label>
+    <input [(ngModel)]="order.distance" name="distance" required>
+
+    <label>Coursier :</label>
+    <select [(ngModel)]="order.coursier_id" name="coursier_id">
+      <option *ngFor="let coursier of coursiers" [value]="coursier.coursier_id">{{coursier.coursier_id }}</option>
+    </select>
+
+    <button type="submit" >Ajouter</button>
+  </form>

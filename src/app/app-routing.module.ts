@@ -4,8 +4,14 @@ import { DashboardComponent} from './dashboard/dashboard.component';
 import { UsersComponent} from './users/users.component';
 import { NewcategoryComponent } from './newcategory/newcategory.component';
 import { CoursiersComponent } from './coursiers/coursiers.component';
+import { OrdersComponent } from './orders/orders.component';
+import { NeworderComponent } from './neworder/neworder.component';
+import { NewcoursierComponent } from './newcoursier/newcoursier.component';
 
 const routes: Routes = [
+  { path: 'coursiers', component:NewcoursierComponent},
+  { path: 'orders', component:NeworderComponent},
+  { path: 'orders/list', component:OrdersComponent},
   { path: 'coursiers/list', component: CoursiersComponent},
   { path: 'categories/list', component: DashboardComponent},
   { path: 'categories', component: NewcategoryComponent},

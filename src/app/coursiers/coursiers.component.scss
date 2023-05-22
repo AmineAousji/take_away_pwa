@@ -20,7 +20,7 @@
     letter-spacing: 1px;
     font-family: sans-serif;
     font-size: 0.8rem;
-    width: 100%; /* Modifier */
+    width: 70%; /* Modifier */
     margin-bottom: 1px;
   }
   
@@ -61,7 +61,8 @@
     color: darkblue;
   }
   
-  .div-h2 {
+  .div-h2,
+  .div-h2-order{
     color: black;
     text-align: center;
     margin-top: 2cm;
@@ -83,6 +84,7 @@
     color: black;
     font-weight: bold;
     margin-top: 10px;
+    padding: 5px;
   }
   
   input,
@@ -93,6 +95,7 @@
     border: 1px solid #ccc;
     padding: 5px;
     margin-top: 5px;
+    margin-bottom: 10px;
   }
   
   .button-mod_or_del {

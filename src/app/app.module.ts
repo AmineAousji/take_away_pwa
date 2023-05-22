@@ -13,10 +13,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CoursiersComponent } from './coursiers/coursiers.component';
 import { NewcategoryComponent } from './newcategory/newcategory.component';
+import { OrdersComponent } from './orders/orders.component';
+import { NeworderComponent } from './neworder/neworder.component';
+import { NewcoursierComponent } from './newcoursier/newcoursier.component';
 
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, CoursiersComponent, NewcategoryComponent],
+  declarations: [
+    AppComponent, 
+    DashboardComponent, 
+    CoursiersComponent, 
+    NewcategoryComponent, 
+    OrdersComponent,
+    NeworderComponent,
+    NewcoursierComponent
+  ],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 

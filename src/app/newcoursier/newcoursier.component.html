@@ -1,0 +1,23 @@
+
+  <h2>Ajouter un coursier :</h2>
+
+  <form (ngSubmit)="addCoursier()">
+    <label>Name :</label>
+    <input [(ngModel)]="coursier.name" name="nom" required>
+
+    <label>Adresse :</label>
+    <input [(ngModel)]="coursier.adress" name="adresse" required>
+    
+    <label>recruitment date :</label>
+    <input [(ngModel)]="coursier.recruitment_date" name="recruitment_date" required>
+
+    <label>Telephone number :</label>
+    <input [(ngModel)]="coursier.Num_tel" name="Num_tel" required>
+
+    <label>category :</label>
+    <select [(ngModel)]="coursier.category_name" name="category_name">
+      <option *ngFor="let category of categories" [value]="category.category_name">{{category.category_name }}</option>
+    </select>
+
+    <button type="submit" >Ajouter</button>
+  </form>
