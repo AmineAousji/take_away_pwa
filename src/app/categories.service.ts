@@ -27,8 +27,11 @@ export class CategoryService {
     return this.http.get(this.baseUrl + 'categories/' + categoryName);
   }
   getCoursierByCategory(categoryName: number): Observable <any>{
-   
-    return this.http.get(this.baseUrl + 'categories/' + categoryName + '/coursiers');
+    const headers = new HttpHeaders({
+      'Content-Type' : 'application/json',
+      'Authorization' : `Bearer ${localStorage.getItem('token')}`
+    })
+    return this.http.get(this.baseUrl + 'categories/' + categoryName + '/coursiers', {headers:headers});
   }
 
   addCategory(category: any): Observable <any>{
