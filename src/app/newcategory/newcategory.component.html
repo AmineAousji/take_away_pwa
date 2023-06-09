@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Créer une catégorie:</h2>
+  <h2>{{ isEditMode ? 'Modifier une catégorie' : 'Ajouter une catégorie' }}</h2>
   <form>
     <div class="input">
       <label>Nom catégorie:</label>
@@ -8,10 +8,11 @@
     <div class="input">
       <label>Description:</label>
       <textarea [(ngModel)]="category.description" name="description" required></textarea>
-      
     </div>
     <div class="button-container">
-      <button type="button" class="btn" (click)="addCategory()">Ajouter catégorie</button>
+      <button type="button" class="btn" (click)="saveCategory()">
+        {{ isEditMode ? 'Modifier une catégorie' : 'Ajouter une catégorie' }}
+      </button>
     </div>
   </form>
-</div>  
+</div>

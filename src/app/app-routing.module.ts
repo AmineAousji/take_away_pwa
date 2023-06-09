@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'orders/list', component:OrdersComponent},
   { path: 'coursiers/list', component: CoursiersComponent},
   { path: 'categories/list', component: DashboardComponent},
-  { path: 'categories', component: NewcategoryComponent},
+  { path: 'categories/modify/:id', component: NewcategoryComponent},
+  { path: 'categories/add', component: NewcategoryComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full' },
   {path: 'login', component: UsersComponent},
   { path: 'folder/:id', loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)}

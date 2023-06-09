@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {AuthService} from './auth.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -10,13 +13,19 @@ export class AppComponent {
     { title: 'Dashboard', url: '/categories/list', icon: 'home' },
     { title: 'Coursiers', url: '/coursiers/list', icon: 'star' },
     { title: 'Orders', url: '/orders/list', icon: 'paper-plane' },
-    { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
+    
+
   ];
   
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
+
+  get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
+
 }
