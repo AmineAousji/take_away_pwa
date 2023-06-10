@@ -16,8 +16,8 @@ export class NeworderComponent {coursiers : CoursiersOrder[] = []
     name_restaurant: '',
     adress_customer: '',
     adress_restaurant: '',
-    price:parseFloat('0') , 
-    distance: parseFloat('0'),
+    price:'' , 
+    distance: '',
     coursier_id: ''
   }
 

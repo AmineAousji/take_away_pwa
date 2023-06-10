@@ -7,8 +7,8 @@ export class Orders{
   "name_restaurant": string;
   "adress_customer": string;
   "adress_restaurant": string;
-  "price": number;
-  "distance": number;
+  "price": string;
+  "distance": string;
   "coursier_id": string;
 }
 

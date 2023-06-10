@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-newcoursier',
   templateUrl: './newcoursier.component.html',
-  styleUrls: ['../neworder//neworder.component.scss'],
+  styleUrls: ['../neworder/neworder.component.scss'],
 })
 export class NewcoursierComponent  implements OnInit {
 

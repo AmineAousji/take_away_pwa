@@ -7,6 +7,7 @@ import { CoursiersComponent } from './coursiers/coursiers.component';
 import { OrdersComponent } from './orders/orders.component';
 import { NeworderComponent } from './neworder/neworder.component';
 import { NewcoursierComponent } from './newcoursier/newcoursier.component';
+import { NewuserComponent } from './newuser/newuser.component';
 
 const routes: Routes = [
   { path: 'coursiers', component:NewcoursierComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'categories/list', component: DashboardComponent},
   { path: 'categories/modify/:id', component: NewcategoryComponent},
   { path: 'categories/add', component: NewcategoryComponent},
+  { path: 'users', component: NewuserComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full' },
   {path: 'login', component: UsersComponent},
   { path: 'folder/:id', loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)}

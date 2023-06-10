@@ -1,18 +1,25 @@
-<div class="container">
-  <h2>{{ isEditMode ? 'Modifier une catégorie' : 'Ajouter une catégorie' }}</h2>
-  <form>
-    <div class="input">
-      <label>Nom catégorie:</label>
-      <input [(ngModel)]="category.category_name" type="text" name="category_name" required>
-    </div>
-    <div class="input">
-      <label>Description:</label>
-      <textarea [(ngModel)]="category.description" name="description" required></textarea>
-    </div>
-    <div class="button-container">
-      <button type="button" class="btn" (click)="saveCategory()">
-        {{ isEditMode ? 'Modifier une catégorie' : 'Ajouter une catégorie' }}
-      </button>
-    </div>
-  </form>
-</div>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ isEditMode ? 'Modifier une catégorie' : 'Ajouter une catégorie' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <form>
+      <div class="input">
+        <ion-label position="floating">Nom catégorie:</ion-label>
+        <ion-input [(ngModel)]="category.category_name" type="text" name="category_name" required></ion-input>
+      </div>
+      <div class="input">
+        <ion-label position="floating">Description:</ion-label>
+        <ion-textarea [(ngModel)]="category.description" name="description" required></ion-textarea>
+      </div>
+      <div class="button-container">
+        <ion-button expand="full" type="button" (click)="saveCategory()">
+          {{ isEditMode ? 'Modifier une catégorie' : 'Ajouter une catégorie' }}
+        </ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

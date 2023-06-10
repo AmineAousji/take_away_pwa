@@ -31,4 +31,13 @@ export class UserService {
     return this.http.post(this.baseUrl + 'check/', user)
   }
 
+  addUser(user: any): Observable <any>{
+    const headers = new HttpHeaders({
+      'Content-Type' : 'application/json',
+      'Authorization' : `Bearer ${localStorage.getItem('token')}`
+    })
+
+    return this.http.post(this.baseUrl + 'users/', user, {headers:headers});
+  }
+
 }

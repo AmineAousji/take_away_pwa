@@ -33,8 +33,8 @@ export class OrdersComponent  implements OnInit {
     name_restaurant: '', 
     adress_customer: '',
     adress_restaurant: '', 
-    price: parseFloat(''), 
-    distance: parseFloat(''),
+    price: '', 
+    distance: '',
     coursier_id: ''
    }
 
